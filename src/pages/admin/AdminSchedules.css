@@ -1,0 +1,111 @@
+.admin-schedules-body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right,#0D1117,#1E293B);
+  color: #fff;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.admin-schedules-body h2 {
+  text-align: center;
+  color: #58a6ff;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.admin-schedules-body .selector-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.admin-schedules-body .selector-box {
+  padding: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  background:#161b22;
+  text-align: center;
+  width: 220px;
+  transition: 0.3s;
+  box-shadow: 0 3px 10px #466f9e;
+}
+
+.admin-schedules-body .selector-box:hover {
+  transform: translateY(-5px);
+  background: #94a3b8;
+  color: black;
+}
+
+.admin-schedules-body .selected {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 3px 10px #466f9e;
+}
+
+.admin-schedules-body .glass {
+  margin: 20px auto;
+  padding: 20px;
+  background: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px #466f9e;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 800px;
+}
+
+.admin-schedules-body label {
+  color: #f1f5f9;
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.admin-schedules-body select,
+.admin-schedules-body input {
+  color: #f1f5f9;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+.admin-schedules-body .match-block {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  margin-top: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.admin-schedules-body button {
+  color: #fff;
+  cursor: pointer;
+  background: #238636;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.admin-schedules-body button:hover {
+  background: #5690d3;
+}
+
+@media (max-width: 768px) {
+  .admin-schedules-body .selector-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,80 @@
+.admin-scores-body {
+    background: linear-gradient(to right,#0D1117,#1E293B);
+    color: white;
+    font-family: Roboto;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.admin-scores-body h2 {
+    color: #58a6ff;
+}
+
+.admin-scores-body .glass {
+    background: #161b22;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    width: 600px;
+    box-shadow: 0 3px 10px #466f9e;
+}
+
+.admin-scores-body select, 
+.admin-scores-body input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #ffffff26;
+    color: #f1f5f9;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.admin-scores-body label {
+    font-weight: bold;
+    color: #f1f5f9;
+    display: block;
+}
+
+.admin-scores-body button {
+    background-color: #238636;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}
+
+.admin-scores-body button:hover {
+    background-color: #5690d3;
+}
+
+@media (max-width: 768px) {
+    .admin-scores-body {
+        padding: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .admin-scores-body .glass {
+        width: 100%;
+        max-width: 90vw;
+        padding: 15px;
+    }
+
+    .admin-scores-body select, 
+    .admin-scores-body input {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .admin-scores-body button {
+        width: 100%;
+        font-size: 16px;
+    }
+}

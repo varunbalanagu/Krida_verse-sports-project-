@@ -1,0 +1,179 @@
+/* Scoped styles for LiveScores dashboard */
+
+.section {
+    padding: 30px;
+}
+
+.slide h1 {
+    position: static;
+    margin-top: 100px;
+    text-align: center;
+    color: #58A6FF;
+}
+
+.slide .section h2 {
+    color: #58a6ff;
+}
+
+.slide .section {
+    position: relative;
+    top: 0;
+    height: auto;
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    background: #161B22;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(147, 177, 166, 0.5);
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.nav-buttons {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 999;
+    padding: 0 10px;
+    pointer-events: none; /* Make container click-through so chart areas aren't blocked */
+}
+
+.nav-buttons button {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    pointer-events: auto; /* Re-enable click for buttons */
+    transition: background-color 0.3s;
+}
+
+.nav-buttons button:hover:not(:disabled) {
+    background-color: #58a6ff;
+}
+
+.nav-buttons button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-container {
+    padding: 60px 0px 0px 0px;
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #555;
+}
+
+.team:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: bold;
+    color: #9cbde3;
+}
+
+.chart-section {
+    padding-top: 20px;
+    margin-top: 30px;
+    color: white;
+}
+
+.chart-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.chart-box {
+    flex: 1 1 48%;
+    max-width: 48%;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+
+.summary {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #2C4D4D;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.summary-btn {
+    background-color: #238636;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.summary-btn:hover {
+    background-color: #58a6ff;
+}
+
+@media (max-width: 768px) {
+    .slider-container {
+        padding-top: 120px;
+    }
+    
+    .chart-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .chart-box {
+        flex: 1 1 100%;
+        max-width: 100%;
+        min-width: auto;
+    }
+    
+    .slide h1 {
+        font-size: 1.8rem;
+        margin-top: 80px;
+    }
+    
+    .slide .section {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .slide h1 {
+        font-size: 1.5rem;
+        margin-top: 60px;
+    }
+}

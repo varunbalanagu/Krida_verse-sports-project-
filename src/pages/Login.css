@@ -1,0 +1,124 @@
+.login-page-body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e,#0f0c29);
+    width: 100vw;
+}
+
+.login-page-body .header {
+    font-size: 3em;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 30px; 
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.login-page-body .header span {
+    display: inline-block;
+    animation: bounce 2s ease-in-out infinite, colorChange 2s ease-in-out infinite;
+}
+
+@keyframes colorChange {
+    0% { color: #fff; }
+    50% { color: #ff5733; }
+    100% { color: #fff; }
+}
+
+.login-page-body .main {
+    width: 350px;
+    height: 500px;
+    background: red;
+    background: url("Login.jpg") no-repeat center / cover;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+}
+
+.login-page-body #chk {
+    display: none;
+}
+
+.login-page-body .signup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.login-page-body label {
+    color: #fff;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.login-page-body input {
+    width: 60%;
+    height: 20px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #000;
+}
+
+.login-page-body button {
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+
+.login-page-body button:hover {
+    background: #6d44b8;
+}
+
+.login-page-body .login {
+    height: 460px;
+    background: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(-180px);
+    transition: 0.8s ease-in-out;
+}
+
+.login-page-body .login label {
+    color: #573b8a;
+    transform: scale(0.6);
+}
+
+.login-page-body #chk:checked ~ .login {
+    transform: translateY(-500px);
+}
+
+.login-page-body #chk:checked ~ .login label {
+    transform: scale(1);
+}
+
+.login-page-body #chk:checked ~ .signup label {
+    transform: scale(0.6);
+}

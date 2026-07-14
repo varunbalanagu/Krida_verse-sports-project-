@@ -9,13 +9,15 @@ function Navbar() {
   const [bellOpen, setBellOpen] = useState(false);
   const [notifications, setNotifications] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState(null);
+  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
 
   const profileRef = useRef(null);
   const bellRef = useRef(null);
 
   useEffect(() => {
-    // Check if user is logged in
+    // Check if user/admin is logged in
     setLoggedInUser(localStorage.getItem('loggedInUser'));
+    setIsAdminLoggedIn(localStorage.getItem('adminLoggedIn') === 'true');
 
     // Listen to outside clicks to close dropdowns
     const handleOutsideClick = (e) => {
@@ -33,6 +35,7 @@ function Navbar() {
   // Sync state when location changes (in case of login/logout redirects)
   useEffect(() => {
     setLoggedInUser(localStorage.getItem('loggedInUser'));
+    setIsAdminLoggedIn(localStorage.getItem('adminLoggedIn') === 'true');
     setHamburgerActive(false);
     setProfileOpen(false);
     setBellOpen(false);
@@ -61,7 +64,9 @@ function Navbar() {
 
   const handleLogout = () => {
     localStorage.removeItem('loggedInUser');
+    localStorage.removeItem('adminLoggedIn');
     setLoggedInUser(null);
+    setIsAdminLoggedIn(false);
     navigate('/login');
   };
 
@@ -126,11 +131,14 @@ function Navbar() {
             <i className="fa-solid fa-user"></i>
           </span>
           <div className={`dropdown-menu ${profileOpen ? 'show' : ''}`} id="dropdown-menu">
-            {loggedInUser ? (
-              <>
-                <Link to="/dashboard">Dashboard</Link>
-                <a href="#" onClick={(e) => { e.preventDefault(); handleLogout(); }}>Logout</a>
-              </>
+            {isAdminLoggedIn && (
+              <Link to="/admin/dashboard">Admin Dashboard</Link>
+            )}
+            {loggedInUser && (
+              <Link to="/dashboard">Dashboard</Link>
+            )}
+            {(loggedInUser || isAdminLoggedIn) ? (
+              <a href="#" onClick={(e) => { e.preventDefault(); handleLogout(); }}>Logout</a>
             ) : (
               <>
                 <Link to="/login">Login</Link>

@@ -27,11 +27,12 @@ function AppContent() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith('/admin');
   const isDashboardRoute = location.pathname.startsWith('/dashboard');
+  const isLoginRoute = location.pathname === '/login';
 
   return (
     <>
-      {/* Hide global navbar on admin and user dashboard pages */}
-      {!isAdminRoute && !isDashboardRoute && <Navbar />}
+      {/* Hide global navbar on admin, user dashboard, and login pages */}
+      {!isAdminRoute && !isDashboardRoute && !isLoginRoute && <Navbar />}
       
       <Routes>
         <Route path="/" element={<Home />} />
@@ -51,8 +52,8 @@ function AppContent() {
         <Route path="/admin/notifications" element={<AdminNotifications />} />
       </Routes>
 
-      {/* Hide global footer on admin and user dashboard pages */}
-      {!isAdminRoute && !isDashboardRoute && <Footer />}
+      {/* Hide global footer on admin, user dashboard, and login pages */}
+      {!isAdminRoute && !isDashboardRoute && !isLoginRoute && <Footer />}
     </>
   );
 }

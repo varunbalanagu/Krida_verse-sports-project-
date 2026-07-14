@@ -50,47 +50,49 @@ function AdminNotifications() {
 
   return (
     <div className="admin-notifications-body" style={{ minHeight: '100vh', background: 'linear-gradient(to right, #0D1117, #1E293b)', padding: '40px 20px', color: '#ffffff' }}>
-      <button onClick={() => navigate('/admin/dashboard')} style={{ background: '#58a6ff', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '5px', fontWeight: 'bold', cursor: 'pointer', marginBottom: '30px' }}>
-        ← Back to Dashboard
-      </button>
+      <div style={{ maxWidth: '600px', width: '100%', margin: '0 auto' }}>
+        <button onClick={() => navigate('/admin/dashboard')} style={{ background: '#58a6ff', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '5px', fontWeight: 'bold', cursor: 'pointer', marginBottom: '20px' }}>
+          ← Back to Dashboard
+        </button>
 
-      <div className="glass" style={{ maxWidth: '600px', margin: '0 auto', padding: '30px', background: '#161b22', borderRadius: '15px', boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}>
-        <h2 style={{ color: '#58a6ff', textAlign: 'center', marginBottom: '25px' }}>Send Sports Notification</h2>
+        <div className="glass" style={{ padding: '30px', background: '#161b22', borderRadius: '15px', boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}>
+          <h2 style={{ color: '#58a6ff', textAlign: 'center', marginBottom: '25px' }}>Send Sports Notification</h2>
 
-        <form onSubmit={saveNotification}>
-          <label htmlFor="heading">Notification Heading:</label>
-          <input 
-            type="text" 
-            id="heading" 
-            placeholder="e.g. Football Match Update" 
-            value={heading} 
-            onChange={(e) => setHeading(e.target.value)} 
-            required 
-          />
+          <form onSubmit={saveNotification}>
+            <label htmlFor="heading">Notification Heading:</label>
+            <input 
+              type="text" 
+              id="heading" 
+              placeholder="e.g. Football Match Update" 
+              value={heading} 
+              onChange={(e) => setHeading(e.target.value)} 
+              required 
+            />
 
-          <label htmlFor="message">Notification Content:</label>
-          <textarea 
-            id="message" 
-            placeholder="Enter notification details..." 
-            rows="4" 
-            value={message} 
-            onChange={(e) => setMessage(e.target.value)} 
-            required
-          ></textarea>
+            <label htmlFor="message">Notification Content:</label>
+            <textarea 
+              id="message" 
+              placeholder="Enter notification details..." 
+              rows="4" 
+              value={message} 
+              onChange={(e) => setMessage(e.target.value)} 
+              required
+            ></textarea>
 
-          <label htmlFor="link">Redirect Link (Optional):</label>
-          <input 
-            type="url" 
-            id="link" 
-            placeholder="e.g. https://example.com/match" 
-            value={link} 
-            onChange={(e) => setLink(e.target.value)} 
-          />
+            <label htmlFor="link">Redirect Link (Optional):</label>
+            <input 
+              type="url" 
+              id="link" 
+              placeholder="e.g. https://example.com/match" 
+              value={link} 
+              onChange={(e) => setLink(e.target.value)} 
+            />
 
-          <button type="submit" style={{ width: '100%', marginTop: '20px', padding: '12px', background: '#238636', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold' }}>
-            Send Notification
-          </button>
-        </form>
+            <button type="submit" style={{ width: '100%', marginTop: '20px', padding: '12px', background: '#238636', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold' }}>
+              Send Notification
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

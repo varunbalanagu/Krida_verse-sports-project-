@@ -149,43 +149,45 @@ function AdminScores() {
 
   return (
     <div className="admin-scores-body" style={{ minHeight: '100vh', background: 'linear-gradient(to right, #0D1117, #1E293b)', padding: '40px 20px', color: '#ffffff' }}>
-      <button onClick={() => navigate('/admin/dashboard')} style={{ background: '#58a6ff', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '5px', fontWeight: 'bold', cursor: 'pointer', marginBottom: '30px' }}>
-        ← Back to Dashboard
-      </button>
+      <div style={{ maxWidth: '600px', width: '100%', margin: '0 auto' }}>
+        <button onClick={() => navigate('/admin/dashboard')} style={{ background: '#58a6ff', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '5px', fontWeight: 'bold', cursor: 'pointer', marginBottom: '20px' }}>
+          ← Back to Dashboard
+        </button>
 
-      <div className="glass" style={{ maxWidth: '600px', margin: '0 auto', padding: '30px', background: '#161b22', borderRadius: '15px', boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}>
-        <h2 style={{ color: '#58a6ff', textAlign: 'center', marginBottom: '25px' }}>Update Live Match Score</h2>
+        <div className="glass" style={{ padding: '30px', background: '#161b22', borderRadius: '15px', boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}>
+          <h2 style={{ color: '#58a6ff', textAlign: 'center', marginBottom: '25px' }}>Update Live Match Score</h2>
 
-        <label htmlFor="match">Select Live Match:</label>
-        <select id="match" value={selectedMatchKey} onChange={(e) => handleMatchSelect(e.target.value)}>
-          <option value="">-- Select Match --</option>
-          {todaysMatches.map(m => (
-            <option key={m.key} value={m.key}>{m.displayText}</option>
-          ))}
-        </select>
+          <label htmlFor="match">Select Live Match:</label>
+          <select id="match" value={selectedMatchKey} onChange={(e) => handleMatchSelect(e.target.value)}>
+            <option value="">-- Select Match --</option>
+            {todaysMatches.map(m => (
+              <option key={m.key} value={m.key}>{m.displayText}</option>
+            ))}
+          </select>
 
-        {selectedMatchKey && (
-          <form onSubmit={updateScore} style={{ marginTop: '25px' }}>
-            <label>Team 1 Name:</label>
-            <input type="text" value={team1} onChange={(e) => setTeam1(e.target.value)} required />
+          {selectedMatchKey && (
+            <form onSubmit={updateScore} style={{ marginTop: '25px' }}>
+              <label>Team 1 Name:</label>
+              <input type="text" value={team1} onChange={(e) => setTeam1(e.target.value)} required />
 
-            <label>Team 2 Name:</label>
-            <input type="text" value={team2} onChange={(e) => setTeam2(e.target.value)} required />
+              <label>Team 2 Name:</label>
+              <input type="text" value={team2} onChange={(e) => setTeam2(e.target.value)} required />
 
-            <label>Team 1 Score:</label>
-            <input type="text" value={score1} onChange={(e) => setScore1(e.target.value)} required />
+              <label>Team 1 Score:</label>
+              <input type="text" value={score1} onChange={(e) => setScore1(e.target.value)} required />
 
-            <label>Team 2 Score:</label>
-            <input type="text" value={score2} onChange={(e) => setScore2(e.target.value)} required />
+              <label>Team 2 Score:</label>
+              <input type="text" value={score2} onChange={(e) => setScore2(e.target.value)} required />
 
-            <label>Feature (Overs / Time):</label>
-            <input type="text" value={extra} onChange={(e) => setExtra(e.target.value)} required />
+              <label>Feature (Overs / Time):</label>
+              <input type="text" value={extra} onChange={(e) => setExtra(e.target.value)} required />
 
-            <button type="submit" style={{ width: '100%', marginTop: '20px', padding: '12px', background: '#238636', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold' }}>
-              Update Score
-            </button>
-          </form>
-        )}
+              <button type="submit" style={{ width: '100%', marginTop: '20px', padding: '12px', background: '#238636', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold' }}>
+                Update Score
+              </button>
+            </form>
+          )}
+        </div>
       </div>
     </div>
   );
